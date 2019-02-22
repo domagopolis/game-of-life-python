@@ -1,0 +1,6 @@
+<a href="/create">Create World</a>
+<ul>
+{% for instance in object_list %}
+    <li><a href="/world/{{instance.alias}}">{{instance.name}} ({{instance.width}}x{{instance.height}})</a></li>
+{% endfor %}
+</ul>

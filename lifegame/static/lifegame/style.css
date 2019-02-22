@@ -1,0 +1,19 @@
+rect{
+    fill: #eee;
+}
+
+rect.food{
+    fill: green;
+}
+
+rect.lifeform{
+    fill: red;
+}
+
+rect.lifeform.male{
+    fill: blue;
+}
+
+rect.lifeform.female{
+    fill: hotpink;
+}

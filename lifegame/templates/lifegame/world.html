@@ -1,0 +1,22 @@
+{% load filters %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lifegame/style.css' %}" />
+<h1>{{world.name}}</h1>
+
+<p><a href="/">Return to home</a></p>
+
+<svg width="{{world.width|mul:10}}" height="{{world.height|mul:10}}">
+{% for column in data %}
+    <g transform="translate({{forloop.counter|sub:1|mul:10}}, 0)">
+    {% for cell in column %}
+        <rect x="0" y="{{forloop.counter|sub:1|mul:10}}" width="10" height="10" class="{{cell}}"></rect>
+    {% endfor %}
+    </g>
+{% endfor %}
+</svg>
+
+<p>{{world.lifeform_set.first.x}}</p>
+
+{% for lifeform in world.lifeform_set.all %}
+<p>{{lifeform.x}} - {{lifeform.y}}</p>
+{% endfor %}
